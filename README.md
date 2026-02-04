@@ -1,7 +1,11 @@
 import numpy as np
+
 from sympy import Matrix
+
 import matplotlib.pyplot as plt
+
 import seaborn as sns
+
 
 // ****************************   DAY 1   *****************************
 
