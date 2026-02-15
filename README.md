@@ -595,4 +595,115 @@ Inverse of B:
 4.Is B easier or harder to invert than A? Why?
 
   Matrix B is harder to invert because its determinant is smaller.
+
+
+
+
+# ********************** Day 3 *************
+
+# Create two 3×3 matrices with random integers (between 1 and 100)
+matrix1 = np.random.randint(1, 100, (3, 3))
+matrix2 = np.random.randint(1, 100, (3, 3))
+
+print("Matrix 1:", matrix1)
+print("\nMatrix 2:", matrix2)
+
+# Perform addition, subtraction, and multiplication
+addition = matrix1 + matrix2
+subtraction = matrix1 - matrix2
+multiplication = np.dot(matrix1, matrix2) 
+
+print("\nAddition (Matrix1 + Matrix2):", addition)
+
+print("\nSubtraction (Matrix1 - Matrix2):",subtraction)
+
+print("\nMultiplication (Matrix1 × Matrix2): ", multiplication)
+
+# Compute determinant, inverse, and rank of one matrix (Matrix1)
+
+# Determinant
+det_a = np.linalg.det(matrix1)
+det_b = np.linalg.det(matrix2)
+
+print("Determinant: ", det_a)
+print("Determinant: ", det_b)
+
+# Rank
+rank = np.linalg.matrix_rank(matrix1)
+print("Rank: ", rank)
+
+if det_a != 0:
+    inverse = np.linalg.inv(matrix1)
+    print("Inverse of a matrix:", inverse)
+else:
+    print("cannot compute inverse")
+
+if det_b != 0:
+    inverse = np.linalg.inv(matrix2)
+    print("Inverse of b matrix:", inverse)
+else:
+    print("cannot compute inverse")
+
+
+
+# Create two vectors, each containing 15 random floats of your choice.
+vector1 = np.random.rand(15)
+vector2 = np.random.rand(15)
+
+# Plot these vectors on the same graph using matplotlib to compare how they look.
+plt.figure()
+plt.plot(vector1, marker='o', label='Vector 1')
+plt.plot(vector2, marker='s', label='Vector 2')
+
+# Label the axes appropriately and give the plot a title.
+plt.xlabel("Index")
+plt.ylabel("Value")
+plt.title("Comparison of Two Random Vectors")
+plt.legend()
+plt.show()
+
+
+
+# Create a 4x4 matrix with random values of your choice.
+mat = np.random.rand(4, 4)
+
+# Display the matrix using a heatmap with appropriate color mapping (e.g., seaborn or matplotlib).
+sns.heatmap(mat, annot=True, cmap='copper', linewidths=1, linecolor='white')
+
+# Add labels to the heatmap to indicate row and column numbers.
+plt.title('Heatmap of 4x4 Matrix')
+plt.show()
+
+
+A = np.random.rand(4, 4)
+B = np.random.rand(4, 4)
+
+# Matrix operations
+add = A + B
+sub = A - B
+mul = np.dot(A, B)
+
+fig, col = plt.subplots(1, 3, figsize=(15, 5))
+
+# addition
+col[0].bar(range(1, 17), add.flatten(), color='b')
+col[0].set_title('Matrix Addition')
+col[0].set_xlabel('Index')
+col[0].set_ylabel('Value')
+
+# Substraction
+col[1].bar(range(1, 17), sub.flatten(), color='g')
+col[1].set_title('Matrix Subtraction')
+col[1].set_xlabel('Index')
+col[1].set_ylabel('Value')
+
+# multiplication
+col[2].bar(range(1, 17), mul.flatten(), color='m')
+col[2].set_title('Matrix Product')
+col[2].set_xlabel('Index')
+col[2].set_ylabel('Value')
+
+plt.tight_layout()
+plt.show()
+
   
